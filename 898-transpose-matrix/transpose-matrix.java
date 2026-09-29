@@ -1,9 +1,7 @@
 class Solution {
     public int[][] transpose(int[][] matrix) {
-        int m = matrix.length;        // Number of rows
-        int n = matrix[0].length;     // Number of columns
-        
-        // The transposed matrix will have dimensions n x m
+        int m = matrix.length;        
+        int n = matrix[0].length;   
         int[][] result = new int[n][m];
         
         for (int i = 0; i < m; i++) {
