@@ -3,16 +3,16 @@ import java.util.List;
 
 class Solution {
     public List<Integer> getRow(int rowIndex) {
-        List<Integer> row = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        long ans = 1;
+        list.add(1);
         
-        for (int i = 0; i <= rowIndex; i++) {
-            row.add(1); // Add a 1 at the end for the new row
-            // Update values from right to left
-            for (int j = i - 1; j > 0; j--) {
-                row.set(j, row.get(j) + row.get(j - 1));
-            }
+        for (int i = 1; i <= rowIndex; i++) {
+            ans = ans * (rowIndex - i + 1);
+            ans /= i; // Fixed: divide by i instead of 1
+            list.add((int) ans);
         }
         
-        return row;
+        return list;
     }
 }
